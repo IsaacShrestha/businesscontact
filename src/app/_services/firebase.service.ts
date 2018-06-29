@@ -17,10 +17,10 @@ export class FirebaseService {
   	return this.businesses;
   }
 
-  /*I getCategories() {
+  getCategories() {
   	this.categories = this._af.list('/categories').valueChanges();
   	return this.categories;
-  }*/
+  }
 
 
 }

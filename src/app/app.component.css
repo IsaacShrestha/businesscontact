@@ -1,0 +1,12 @@
+tr td button {
+	margin-right: 5px;
+}
+
+.custom {
+	background-color: red;
+}
+
+.row {
+	margin-left: 25px;
+	margin-right: 25px;
+}
