@@ -19,10 +19,12 @@ export class AppComponent implements OnInit {
 
 
   constructor(private _firebaseService: FirebaseService) {
+    this.appState = "default";
   }
 
   ngOnInit() {
   	this._firebaseService.getBusinesses().subscribe(businesses => {
+      console.log("Component business="+this.businesses);
   		this.businesses = businesses;
   	});
 

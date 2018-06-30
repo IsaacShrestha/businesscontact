@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
     firebase: {
-    apiKey: '',
+    apiKey: 'AIzaSyCEXhmMqV0iEnBJ5heCGB0kZc75jhXLBCg',
     authDomain: 'businesscontacts-f785e.firebaseapp.com',
     databaseURL: 'https://businesscontacts-f785e.firebaseio.com',
     projectId: 'businesscontacts-f785e',

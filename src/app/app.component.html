@@ -20,33 +20,43 @@
 	</div>
 
 	<div *ngFor="let business of businesses">
-		<div *ngIf="business.key == activeKey">
+		<div *ngIf="business.id == activeKey">
 			<div class="row">
-				<div class="large-5 large-offset-1 columns">
-					<h3>{{business.company}}</h3>
-					<p>Category: {{business.category}}</p>
-					<p>Years in business: {{business.years_in_business}}</p>
-					<p>{{business.description}}</p>
-				</div>
-				<div class="large-5 large-offset-1 columns">
-					<h4>Contact info</h4>
-					<ul>
-						<li>Phone: {{business.phone}}</li>
-						<li>Email: {{business.email}}</li>
-						<li>Street: {{business.street_address}}</li>
-						<li>City: {{business.city}}</li>
-						<li>State: {{business.state}}</li>
-						<li>Zip code: {{business.zipcode}}</li>
-					</ul>
+				<div class="businesscard large-4 columns large-offset-1">
+					<div class="card-left">
+						<span class="card-head">{{business.name}}</span><br>
+						<span class="separator"></span><br>
+						<span><strong>Company:</strong> {{business.company}}</span><br>
+						<span><strong>Category:</strong> {{business.category}}</span><br>
+						<span><strong>Known from:</strong> {{business.known_from}}</span><br>
+					</div>
+					<div class="card-right">
+						<h4>Contact info</h4>
+						<ul>
+							<li><strong>Phone:</strong> {{business.phone}}</li>
+							<li><strong>Email:</strong> {{business.email}}</li>
+							<li><strong>Street:</strong> {{business.street_address}}</li>
+							<li><strong>City:</strong> {{business.city}}</li>
+							<li><strong>State:</strong> {{business.state}}</li>
+							<li><strong>Zip code:</strong> {{business.zipcode}}</li>
+						</ul>
+					</div>
+
 				</div>
 			</div>
+			<div class="row businessdescription">
+				{{business.description}}
+			</div>
+
 		</div>
 	</div>
 </div>
 
+
+
 <div class="row">
 	<div class="large-12 columns">
-		<div *ngIf="businesses">
+		<div *ngIf="businesses && appState == 'default' ">
 			<table>
 				<thead>
 					<tr>
@@ -62,7 +72,7 @@
 						<td>{{business.category}}</td>
 						<td>{{business.phone}}</td>
 						<td>
-							<button class="button" (click)="changeState('extend', business.$key)">More</button>
+							<button class="button" (click)="changeState('extend', business.id)">More</button>
 							<button class="button secondary">Edit</button>
 							<button class="button custom">Delete</button>
 						</td>
